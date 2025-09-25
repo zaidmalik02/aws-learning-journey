@@ -1,0 +1,44 @@
+Day 1 – EC2 Webserver
+What I Learned
+
+Basics of IAM (root user vs IAM user)
+
+How to launch an EC2 instance
+
+Connecting to EC2 via SSH
+
+Installing Apache (HTTPD) and hosting a simple webpage
+
+Steps I Did
+
+Created an IAM user with programmatic & console access
+
+Launched an EC2 instance:
+
+AMI: Amazon Linux 2
+
+Instance type: t2.micro (Free Tier)
+
+Storage: Default (8GB)
+
+Security Group: Allowed SSH (22) and HTTP (80)
+
+Connected to instance using SSH (from AWS Console → “Connect”)
+
+Installed Apache web server:
+
+sudo yum update -y
+sudo yum install -y httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+
+Created a simple webpage:
+
+echo "Hello World from EC2" | sudo tee /var/www/html/index.html
+
+Output
+
+Successfully hosted a “Hello World” webpage on EC2
+
+Accessible at:13.200.252.224
